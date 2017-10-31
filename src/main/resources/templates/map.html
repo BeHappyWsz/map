@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+ 	<script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=4cd4432fbd2ad98b1102db6d1c3b0227"></script>
+	<script src="/js/jquery-3.2.1.min.js"></script>
+	<script src="/js/map.js"></script>
+</head>
+<body>
+<div>
+	<div id="map" style="width: 800px;height: 500px;"></div>
+	<fieldset>
+		<legend>查找</legend>
+		<table>
+			<tr>
+				<td>位置</td>
+				<td><input type="text" id="where" name="where"/></td>
+				<td><input type="button" onclick="search()" value="查找"></td>
+			</tr>
+		</table>
+	</fieldset>
+	<script type="text/javascript">
+		function search() {
+		    var where = $("#where").val();
+            //开始加载地图
+			mapInit(where);
+        }
+        //开始加载地图
+        setTimeout(function(){
+            mapInit();
+        },1000);
+	</script>
+</div>
+</body>
+</html>
